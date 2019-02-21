@@ -5,10 +5,11 @@ import random
 import pandas as pd
 
 # Authentication token
-api_auth = '54674211-0d9e-48d4-96b0-03597d5d625e'
+api_auth = 'your-api-goes_here'
 # counter
 counter = 0
 # Power BI Real Time API
+# Replace by your own
 REST_API_URL = 'https://api.powerbi.com/beta/6494460e-8600-4edc-850f-528e8faad290/datasets/288527d3-eb81-4f17-9df1-dd7270163b86/rows?key=jOtLG%2FGwRo6xcu%2B%2FkyFVn4rU9Z0fbTlNq0CQp2%2FNGB5UtLiG54TJQRauUY26chuRRpOF9d1cJTXwDlmL2MA3Rw%3D%3D'
 # next departures from Montparnasse
 request_url = 'https://api.sncf.com/v1/coverage/sncf/stop_areas/stop_area:OCE:SA:87391003/departures?' \
