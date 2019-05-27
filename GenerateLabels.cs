@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Data.SqlClient;
@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class GenerateLabels : MonoBehaviour {
     
     // after the sql query is executed we will have a filled users array
-    List<User> users = new List<User>();
+    List users = new List();
     // Use this for initialization
     void Start ()
     {
@@ -35,9 +35,9 @@ public class GenerateLabels : MonoBehaviour {
     }
 
     // function to connect to the db and the users list
-    List<User> ConnectToDB()
+    List ConnectToDB()
     {
-        List<User> users = new List<User>();
+        List users = new List();
         // Build connection string
         SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         builder.DataSource = "powermatch.database.windows.net";
@@ -78,7 +78,7 @@ public class GenerateLabels : MonoBehaviour {
                                 & !reader.IsDBNull(3))
                             {
                                 // Skills list to be attached to each user object
-                                List<Skill> skills = new List<Skill>();
+                                List skills = new List();
                                 // get output parameters
                                 string username = reader.GetString(0);
                                 string aboutString = reader.GetString(1);
@@ -128,9 +128,9 @@ public class User
 {
     public string Name { get; set; }
     public string About { get; set; }
-    public List<Skill> Skills { get; set; }
+    public List Skills { get; set; }
 
-    public User(string Name, string About, List<Skill> Skills)
+    public User(string Name, string About, List Skills)
     {
         this.Name = Name;
         this.About = About;
@@ -142,3 +142,4 @@ public class User
         return "Person: " + this.Name + " About me: " + this.About;
     }
 }
+
