@@ -1,5 +1,5 @@
-DECLARE @dataVersion string = "mag-2019-08-13";
-DECLARE @blobAccount string = "magasexpertime";
+DECLARE @dataVersion string = "mag-yyyy-mm-dd";
+DECLARE @blobAccount string = "magascompanyname";
 DECLARE @uriPrefix   string = "wasb://" + @dataVersion + "@" + @blobAccount + "/";
 DECLARE @outAuthorHindex string = "/Output/AuthorHIndex.tsv";
 
